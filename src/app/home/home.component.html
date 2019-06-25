@@ -1,0 +1,62 @@
+<!-- <h1>Home</h1> -->
+<!-- <h1 [class.gray]="h1Style">Home</h1> -->
+<!-- <h1 [ngStyle]="{
+  'color': h1Style ? 'gray' : 'black',
+  'font-size': !h1Style ? '1em' : '4em'
+}">Home</h1>
+
+<button (click)="firstClick()">Click me</button> -->
+<div class="container-fluid">
+    <h1>Users</h1>
+  <div class="col-md-12">
+
+    <div class="row">
+      
+      <div class="col-md-12">
+
+          <h1> {{texto}}</h1>
+
+          <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
+            <agm-marker  [latitude]="lat" [longitude]="lng"></agm-marker>
+          </agm-map>
+         
+
+
+
+      </div>
+      <!-- <div class="col-md-6">
+
+        2
+      </div> -->
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+  <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+          <app-my-example></app-my-example>
+      </ng-template>
+    </ngb-panel>
+
+
+    <ngb-panel title="Simple">
+      <ng-template ngbPanelContent>
+        <ul *ngIf="githubs">
+          <li *ngFor="let github of githubs">
+            <!-- <img [src]="github.avatar"> -->
+            {{github.name}}
+          </li>
+        </ul>
+
+      </ng-template>
+    </ngb-panel>
+
+
+  </ngb-accordion>
