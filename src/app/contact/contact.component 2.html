@@ -11,7 +11,11 @@
         <div *ngIf="messageForm.controls.name.errors.required">Your name is required</div>
       </div>
     </label>
-  
+
+        <input type="hidden" formControlName="rate" [(ngModel)]="currentRate">
+       
+
+    
     <label>
       Message:
       <textarea formControlName="message"></textarea>
@@ -21,7 +25,8 @@
     </label>
 
     <input type="submit" value="Send message"  class="cta">
-  
+    <!-- <input class="form-control" type="text" [(ngModel)]="sdsd" formControlName="ramin"> -->
+  <ngb-rating [(rate)]="currentRate" (rateChange)="readCurrentRate()"></ngb-rating>
   </form>
 
   <div *ngIf="submitted" class="results">
@@ -33,5 +38,4 @@
   </div>
 
 
-  <ngb-rating [(rate)]="currentRate" (rateChange)="readCurrentRate()"></ngb-rating>
   
